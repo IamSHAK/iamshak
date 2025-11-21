@@ -1,0 +1,496 @@
+/* GENERAL STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{ scroll-behavior: smooth;}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #FFFFFF;
+    height: 100%;
+    min-width: 100vh;
+
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+p{
+    color: rgb(0, 0, 0);
+}
+/*transition */
+
+a, .btn{
+    transition: all 0.3s ease;
+}
+
+/* --- DESKTOP NAVIGATION BAR --- */
+nav {
+    display: flex;
+    justify-content: space-between; /* logo left, links right */
+    align-items: center;
+    height: 17vh;
+    padding: 0 20px;
+    background: #fff; /* optional background */
+}
+
+nav .logo {
+    font-weight: 600;
+    font-size: 2rem;
+    color: rgb(30, 30, 30);
+    cursor: default; /* logo is not clickable */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative; /* optional if you want underline animations later */
+}
+
+.nav-links li a {
+    display: inline-block;
+    padding: 10px 5px; /* comfortable hover area */
+    color: rgb(34, 33, 33);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: blue;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+/* remove any generic a hover that might conflict */
+a.btn {
+    transition: all 0.3s ease; /* only buttons get this transition */
+}
+
+
+
+
+/* HOME SECTION */
+.home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+        /* DARKER GALAXY NEBULA */
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(75, 0, 130, 0.35) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(0, 102, 153, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 50% 80%, rgba(153, 0, 102, 0.2) 0%, transparent 65%),
+        radial-gradient(circle at 70% 60%, rgba(0, 153, 102, 0.2) 0%, transparent 70%);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+}
+
+.home-content{
+    max-width: 600px;
+    flex: 1 1 400px;
+    text-align:left;
+}
+.home-content h1{
+    text-align: center;
+    color: rgb(84, 84, 195);
+    font-size: 4rem;
+}
+.home-content h4{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.8rem;
+    margin-top: 1rem;
+}
+
+.home-content p, .home-content a{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+.home-content a.btn:hover{
+    color: rgb(210, 28, 213);
+}
+
+.home-image {
+  position: relative;
+  width: 600px; /* size of your shape */
+  height: 645px; /* approx height for shape */
+  margin-left: 70px;
+
+}
+
+
+/* Image hexagon */
+.home-img {
+  position: absolute;
+  inset: 25px; /* padding to sit inside the background hexagon */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+    border-radius: 50%;
+  animation: pulse 5s infinite;
+
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px 8px rgba(19, 102, 246, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 40px 15px rgb(19, 102, 246, 1);
+  }
+  100% {
+    box-shadow: 0 0 20px 8px rgba(19, 102, 246, 0.7);
+  }
+}
+
+
+/* ABOUT SECTION */
+#about{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 4rem 2rem
+}
+.about-image{
+    flex-shrink: 0;
+}
+.about-img {
+    width: 550px;     /* resizes properly */
+    height: 650px;
+    border-radius: 30%;
+    object-fit: cover;
+
+    /* floating animation */
+     animation: bounce 5s ease-in-out infinite;
+     will-change: transform;
+     filter: drop-shadow( 0 0 20px rgba(0, 149, 255, 0.6));
+
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* About Content */
+.about_content{
+    display: flex;
+    flex-direction: column;
+    gap:10px 20px;
+}
+.about_content h1{
+    font-size: 3rem;
+    color: rgb(84, 84, 195);
+    margin-bottom: 1rem;
+}
+
+
+/* Resume Button */
+
+.resume_btn{
+    padding-top: 20px;
+}
+.res_btn{
+    background-color: rgb(157, 226, 250);
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+.res_btn:hover{
+    background-color: rgb(8, 194, 23);
+}
+.resume_btn a{
+
+    text-decoration: none;
+}
+
+/* Skills List */
+
+.skills-container {
+    display: flex;
+    width: 85%;
+    gap: 3rem; /* space between columns */
+    padding-left: 25%
+}
+
+.skill-column {
+    flex: 1; /* each column takes 50% */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* space between skills */
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem; /* space between name, percent, and bar */
+}
+
+.skill-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.perc {
+    font-size: 0.9rem;
+    color: #28a745; /* green for percentage */
+    font-weight: 500;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #6a686881; /* light gray background */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background-color: #28a745; /* green bar */
+    border-radius: 5px 0 0 5px; /* round left side */
+    transition: width 0.5s ease-in-out; /* animate growth */
+}
+
+/* ---- Contacts Section ---- */
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    margin-top: 10rem;  
+        background-image:
+        radial-gradient(circle at 20% 30%, rgba(75, 0, 130, 0.35) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(0, 102, 153, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 50% 80%, rgba(153, 0, 102, 0.2) 0%, transparent 65%),
+        radial-gradient(circle at 70% 60%, rgba(0, 153, 102, 0.2) 0%, transparent 70%);
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+.contact p{
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 1rem;
+}
+.email_btn{
+    margin-top: 20px;
+    background-color: rgb(8, 194, 23);
+    padding: 10px 20px;
+    border-radius: 10px;
+    
+}
+.email_btn a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.email_btn:hover{
+    background-color: rgb(157, 226, 250);
+    color: black;
+    cursor: pointer;
+}
+.icon-img{
+    width: 48px;
+    height: auto;
+    margin-right: 8px;
+    margin-top: 30px;
+}
+.icon-img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+/* --- Projects Section --- */
+.projects {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+/* --- Card Grid --- */
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+/* --- Card --- */
+.project-card {
+    width: 340px;
+    height: 190px;
+    perspective: 1000px;
+    animation: bounce 5.5s ease-in-out infinite;
+}
+
+/* --- Inner Container for Flip --- */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .card-inner {
+    transform: rotateY(180deg);
+    animation: bounce 0.5s;
+}
+
+/* --- Front & Back Faces --- */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    padding: 18px;
+    background: linear-gradient(135deg, #A7E9AF, #6CC4D6, #4A90E2);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #4A90E2, #6CC4D6, #A7E9AF);
+    text-align: center;
+}
+
+/* --- Images --- */
+.card-front .project-img img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.07);
+}
+
+/* --- Buttons --- */
+.card-back .btn {
+    margin-top: 15px;
+    padding: 10px 8px;
+    background: #0bb000;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.card-back .btn:hover {
+    background: #06e03d;
+    transform: scale(1.05);
+}
+
+/* --- Bounce Animation --- */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-7px);
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 1200px) { .project-card { width: 45%; } }
+@media (max-width: 768px) { .project-card { width: 90%; } }
+
+/* Store Page Styles */
+
+/* Footer Styles */
+.footer {
+    background: #ffffff;
+        background-image:
+        radial-gradient(circle at 20% 30%, rgba(75, 0, 130, 0.35) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(0, 102, 153, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 50% 80%, rgba(153, 0, 102, 0.2) 0%, transparent 65%),
+        radial-gradient(circle at 70% 60%, rgba(0, 153, 102, 0.2) 0%, transparent 70%);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.footer-links {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #4A90E2;
+}
+
+.footer-credit {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
