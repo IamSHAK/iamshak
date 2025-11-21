@@ -495,75 +495,147 @@ a.btn {
     margin-top: 5px;
 }
 
-/* MOBILE FIX */
-@media (max-width: 768px) {
-  /* Home Section */
-  .home {
-    flex-direction: column;
-    padding: 50px 20px; /* less padding on mobile */
-  }
+/* --- DESKTOP (default) --- */
+/* Keep all your existing desktop styles here as-is */
 
-  .home-content {
-    max-width: 100%;
-    flex: unset;
-    text-align: center;
-  }
+/* --- TABLET (481px - 768px) --- */
+@media (min-width: 481px) and (max-width: 768px) {
 
-  .home-content h1 {
-    font-size: 2.5rem; /* smaller heading */
-  }
+    /* HOME SECTION */
+    .home {
+        flex-direction: row; /* keep side-by-side */
+        flex-wrap: wrap;     /* allow wrapping if needed */
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 70px 20px;
+    }
 
-  .home-content h4 {
-    font-size: 1.2rem;
-  }
+    .home-content {
+        max-width: 90%;
+        flex: 1 1 400px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-  .home-content p, .home-content a {
-    font-size: 1rem;
-  }
+    .home-content h1 { font-size: 3rem; }
+    .home-content h4 { font-size: 1.5rem; }
+    .home-content p,
+    .home-content a { font-size: 1.2rem; }
 
-  .home-image {
-    width: 100%;
-    height: auto;
-    margin-left: 0;
-    margin-top: 20px;
-  }
+    .home-image {
+        width: 80%;
+        height: auto;
+        margin-left: 0;
+        position: relative; /* allow natural flow */
+    }
 
-  .home-img {
-    width: 80%;
-    height: auto;
-    margin: 0 auto;
-  }
+    .home-img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        inset: 0;
+        margin: 0 auto;
+    }
 
-  /* About Section */
-  #about {
-    flex-direction: column;
-    text-align: center;
-  }
+    /* ABOUT SECTION */
+    #about {
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 3rem 2rem;
+    }
 
-  .about-img {
-    width: 90%;
-    height: auto;
-    margin: 0 auto 20px;
-  }
+    .about-img {
+        width: 80%;
+        height: auto;
+        margin: 0 auto 20px;
+    }
 
-  .about_content h1 {
-    font-size: 2rem;
-  }
+    .about_content h1 { font-size: 2.5rem; }
 
-  .skills-container {
-    flex-direction: column;
-    padding-left: 0;
-    width: 100%;
-  }
+    .skills-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 0;
+        width: 100%;
+    }
 
-  /* Projects Section */
-  .project-grid {
-    flex-direction: column;
-    gap: 20px;
-  }
+    /* PROJECTS SECTION */
+    .project-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
 
-  .project-card {
-    width: 90% !important;
-    margin: 0 auto;
-  }
+    .project-card { width: 45%; margin: 0 auto; }
+
+}
+
+/* --- MOBILE (<=480px) --- */
+@media (max-width: 480px) {
+
+    /* HOME SECTION */
+    .home {
+        flex-direction: column; /* stack text above image */
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    .home-content {
+        max-width: 90%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .home-content h1 { font-size: 2.5rem; }
+    .home-content h4 { font-size: 1.2rem; }
+    .home-content p,
+    .home-content a { font-size: 1rem; }
+
+    .home-image {
+        width: 90%;
+        height: auto;
+        margin-left: 0;
+        position: relative; /* reset absolute for stacking */
+    }
+
+    .home-img {
+        position: relative; /* image flows naturally below text */
+        width: 100%;
+        height: auto;
+        inset: 0;           /* remove padding inside absolute */
+        margin: 0 auto;
+    }
+
+    /* ABOUT SECTION */
+    #about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        width: 90%;
+        height: auto;
+        margin: 0 auto 20px;
+    }
+
+    .about_content h1 { font-size: 2rem; }
+
+    .skills-container {
+        flex-direction: column;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    /* PROJECTS SECTION */
+    .project-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 90% !important;
+        margin: 0 auto;
+    }
 }
